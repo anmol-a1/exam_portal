@@ -9,15 +9,15 @@ const ExamDetails = (props) => {
     const handleSubmit = (e) => {
 
         const deletedtudent = async () => {
-            let response = await fetch('134.209.157.1/teacher/finalizetotaltime/' + props.element.id);
-            let response1 = await fetch('134.209.157.1/teacher/finalizetotalmarks/' + props.element.id);
+            let response = await fetch('/teacher/finalizetotaltime/' + props.element.id);
+            let response1 = await fetch('/teacher/finalizetotalmarks/' + props.element.id);
             let data = await response.json();
             let data1 = await response1.json();
             const totaltime = data[0].totaltime
             const marks = data1[0].marks
             console.log(formData);
             try {
-                const was = await fetch('134.209.157.1/teacher/editexam/' + props.element.id, {
+                const was = await fetch('/teacher/editexam/' + props.element.id, {
                     method: 'PUT',
                     headers: {
                         'Accept': 'application/json',

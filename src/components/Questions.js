@@ -16,7 +16,7 @@ const Questions = (props) => {
     const [formData, updateFormData] = useState({ ques: "", opt1: "", opt2: "", opt3: "", opt4: "", totaltime: "1", correctoption: "2", marks: "1" });
     useEffect(() => {
         async function fetchList() {
-            let response = await fetch('134.209.157.1/student/examsquestions/' + examid)
+            let response = await fetch('/student/examsquestions/' + examid)
             let data = await response.json();
             setdata(data);
             console.log(data);
@@ -46,7 +46,7 @@ const Questions = (props) => {
     };
     const handleSubmission4 = async (e) => {
         e.preventDefault();
-        let url = '134.209.157.1/teacher/questionsupload/';
+        let url = '/teacher/questionsupload/';
         props.setprogress(50);
         console.log(form_data1)
         try{
@@ -85,7 +85,7 @@ const Questions = (props) => {
         form_data.append('correctoption', formData.correctoption);
         form_data.append('totaltime', formData.totaltime);
         form_data.append('marks', formData.marks);
-        let url = '134.209.157.1/teacher/examhostques/';
+        let url = '/teacher/examhostques/';
         await axios.post(url, form_data, {
             headers: {
                 'Content-Type': 'multipart/form-data'
@@ -109,7 +109,7 @@ const Questions = (props) => {
     //     console.log(formData);
     //     const addques = async () => {
     //         try {
-    //             const was = await fetch('134.209.157.1/teacher/examhostques/', {
+    //             const was = await fetch('/teacher/examhostques/', {
     //                 method: 'POST',
     //                 headers: {
     //                     'Accept': 'application/json',

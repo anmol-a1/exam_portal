@@ -22,9 +22,9 @@ const Studenthomepage = (props) => {
     useEffect(() => {
         async function fetchExamUpcoming() {
             props.setprogress(10);
-            let response = await fetch('134.209.157.1/student/upcomingexams/' + year + '/' + stream);
+            let response = await fetch('/student/upcomingexams/' + year + '/' + stream);
             props.setprogress(50);
-            let response1 = await fetch('134.209.157.1/student/attempteddetails/' + id);
+            let response1 = await fetch('/student/attempteddetails/' + id);
             let data = await response.json();
             props.setprogress(80);
             let data1 = await response1.json();

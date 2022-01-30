@@ -19,7 +19,7 @@ const EditExamPage = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const addexam = async () => {
-            const was = await fetch('134.209.157.1/teacher/editexam/'+formData.id, {
+            const was = await fetch('/teacher/editexam/'+formData.id, {
                 method: 'PUT',
                 headers: {
                     'Accept': 'application/json',

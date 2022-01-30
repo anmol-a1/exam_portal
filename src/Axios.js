@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = '134.209.157.1/';
+const baseURL = '';
 
 const axiosInstance = axios.create({
 	baseURL: baseURL,

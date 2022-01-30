@@ -41,7 +41,7 @@ const StudentsList = (props) => {
         document.getElementById('listofstudents').classList.remove('invisible');
         props.setprogress(20);
         async function fetchList() {
-            let response = await fetch('134.209.157.1/teacher/studentlistadded/' + stream + '/'+formData3.year3);
+            let response = await fetch('/teacher/studentlistadded/' + stream + '/'+formData3.year3);
             if(response.status===404){
                 props.showalert("select a year", "danger");
                 props.setprogress(100);
@@ -71,7 +71,7 @@ const StudentsList = (props) => {
         }
         if (formData.password.length >= 8 && formData.name.length >= 3 && ValidateEmail(formData.email)) {
             const signupdata = async () => {
-                const was = await fetch('134.209.157.1/auth/create/', {
+                const was = await fetch('/auth/create/', {
                     method: 'POST',
                     headers: {
                         'Accept': 'application/json',
@@ -106,7 +106,7 @@ const StudentsList = (props) => {
 
     const handleSubmission = async (e) => {
         e.preventDefault();
-        let url = '134.209.157.1/auth/fileupload/';
+        let url = '/auth/fileupload/';
         props.setprogress(50);
         console.log(form_data)
         try{

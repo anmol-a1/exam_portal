@@ -22,7 +22,7 @@ const Addexam = (props) => {
         console.log(formData);
         props.setprogress(0);
         const addexam = async () => {
-            const was = await fetch('134.209.157.1/teacher/examhostdata/', {
+            const was = await fetch('/teacher/examhostdata/', {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',

@@ -6,7 +6,7 @@ const Questiondiv = (props) => {
         
         const deletedtudent = async () => {
             try{
-            const was = await fetch('134.209.157.1/teacher/deleteques/' + props.element.prim_key, {
+            const was = await fetch('/teacher/deleteques/' + props.element.prim_key, {
                 method: 'DELETE',
                 headers: {
                     'Accept': 'application/json',

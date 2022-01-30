@@ -12,7 +12,7 @@ const ResultsPage = (props) => {
     useEffect(() => {
         async function fetchtresults() {
 
-            let response = await fetch('134.209.157.1/teacher/results/' + examid)
+            let response = await fetch('/teacher/results/' + examid)
             let data = await response.json();
             console.log(data);
             setdata(data);

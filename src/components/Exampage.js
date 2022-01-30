@@ -38,7 +38,7 @@ const Exampage = (props) => {
                 }
             }
             console.log(minutes);
-            const was = await fetch('134.209.157.1/student/examupdate/' + onexamid, {
+            const was = await fetch('/student/examupdate/' + onexamid, {
                 method: 'PUT',
                 headers: {
                     'Accept': 'application/json',
@@ -110,7 +110,7 @@ const Exampage = (props) => {
             }
         }
         props.setprogress(20);
-        const was =await fetch('134.209.157.1/student/postresult/', {
+        const was =await fetch('/student/postresult/', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

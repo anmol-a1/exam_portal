@@ -17,7 +17,7 @@ const Forgpasemail = (props) => {
     const handleSubmit = (e) => {
         const resetpassworddata = async () => {
             try {
-                let response = await fetch('134.209.157.1/auth/request-reset-email/', {
+                let response = await fetch('/auth/request-reset-email/', {
                     method: 'POST',
                     headers: {
                         'Accept': 'application/json',

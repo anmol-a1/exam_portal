@@ -36,7 +36,7 @@ const Forgpass = (props) => {
 
             const resetpassworddata = async () => {
                 try {
-                    await fetch('134.209.157.1/auth/password-reset-complete/', {
+                    await fetch('/auth/password-reset-complete/', {
                         method: 'PATCH',
                         headers: {
                             'Accept': 'application/json',

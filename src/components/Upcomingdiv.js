@@ -30,7 +30,7 @@ export const Upcomingdiv = (props) => {
                 payload: examdata
             })
             props.setprogress(20);
-            let response = await fetch('134.209.157.1/student/checkingattempt/' + id + '/' + props.element.id);
+            let response = await fetch('/student/checkingattempt/' + id + '/' + props.element.id);
             props.setprogress(40);
             let datas = await response.json();
             console.log(datas)
@@ -48,7 +48,7 @@ export const Upcomingdiv = (props) => {
                     payload: datas[0].id
                 })
                 async function fetchExamUpcoming() {
-                    let response1 = await fetch('134.209.157.1/student/examsquestions/' + props.element.id);
+                    let response1 = await fetch('/student/examsquestions/' + props.element.id);
                     props.setprogress(70);
                     let data = await response1.json();
                     console.log(data);
@@ -75,7 +75,7 @@ export const Upcomingdiv = (props) => {
             else {
                 console.log("hii");
                 async function fetchExamUpcoming() {
-                    let response = await fetch('134.209.157.1/student/examsquestions/' + props.element.id);
+                    let response = await fetch('/student/examsquestions/' + props.element.id);
                     props.setprogress(70);
                     let data = await response.json();
                     data = data.sort(() => user.random_num - 0.5);
@@ -84,7 +84,7 @@ export const Upcomingdiv = (props) => {
                         array.push(0)
                     }
                     const abc="000000000"
-                    const was = await fetch('134.209.157.1/student/initializedata/', {
+                    const was = await fetch('/student/initializedata/', {
                         method: 'POST',
                         headers: {
                             'Accept': 'application/json',
@@ -172,7 +172,7 @@ export const Upcomingdiv = (props) => {
     useEffect(() => {
         props.setprogress(0);
         async function check() {
-            let response = await fetch('134.209.157.1/student/checking/' + id + '/' + props.element.id);
+            let response = await fetch('/student/checking/' + id + '/' + props.element.id);
             if (response.status === 400) {
                 try {
                     var element = document.getElementById("yesorno" + props.element.id);

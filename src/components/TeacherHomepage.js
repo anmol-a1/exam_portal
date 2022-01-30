@@ -35,9 +35,9 @@ const TeacherHomepage = (props) => {
         props.setprogress(0);
         async function fetchteacherexam() {
 
-            let response = await fetch('134.209.157.1/teacher/examdetails/' + id)
+            let response = await fetch('/teacher/examdetails/' + id)
             props.setprogress(30);
-            let response1 = await fetch('134.209.157.1/teacher/examdetailspast/' + id)
+            let response1 = await fetch('/teacher/examdetailspast/' + id)
             props.setprogress(70);
             let data = await response.json();
             let data1 = await response1.json();

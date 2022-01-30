@@ -5,7 +5,7 @@ const StudentListDiv = (props) => {
     const handleSubmit = (e) => {
         
         const deletedtudent = async () => {
-            const was = await fetch('134.209.157.1/teacher/deletestudent/' + props.element.id, {
+            const was = await fetch('/teacher/deletestudent/' + props.element.id, {
                 method: 'DELETE',
                 headers: {
                     'Accept': 'application/json',
